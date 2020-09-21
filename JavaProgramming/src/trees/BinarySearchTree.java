@@ -73,14 +73,42 @@ public class BinarySearchTree
         {
 
             this.printInorder(root2.left);
-            System.out.println(root2.data);
+            System.out.print(root2.data + ",");
+            this.printInorder(root2.right);
+        }
+    }
+
+    private void printPostorder(Node root2)
+    {
+        if (root2 != null)
+        {
+
+            this.printInorder(root2.left);
+            this.printInorder(root2.right);
+            System.out.print(root2.data + ",");
+        }
+    }
+
+    private void printPreorder(Node root2)
+    {
+        if (root2 != null)
+        {
+
+            System.out.print(root2.data + ",");
+            this.printInorder(root2.left);
             this.printInorder(root2.right);
         }
     }
 
     private void printTree()
     {
+        System.out.println("Inorder Traversal =>");
         this.printInorder(this.root);
+        System.out.println("\n\nPostorder Traversal =>");
+        this.printPostorder(this.root);
+        System.out.println("\n\nPreorder Traversal =>");
+        this.printPreorder(this.root);
+
     }
 
 }
