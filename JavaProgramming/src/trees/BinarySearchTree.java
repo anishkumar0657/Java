@@ -30,6 +30,7 @@ public class BinarySearchTree
         tree.insert(3);
         tree.insert(4);
         tree.insert(1);
+
         tree.printTree();
     }
 
