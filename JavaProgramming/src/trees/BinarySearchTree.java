@@ -13,11 +13,9 @@ public class BinarySearchTree
     {
         int data;
 
-        Node left;
+        Node left, right;
 
-        Node right;
-
-        Node(int data)
+        public Node(int data)
         {
             this.data = data;
             this.left = this.right = null;
@@ -27,9 +25,14 @@ public class BinarySearchTree
     public static void main(String[] args)
     {
         BinarySearchTree tree = new BinarySearchTree();
-        tree.insert(3);
-        tree.insert(4);
-        tree.insert(1);
+        tree.insert(50);
+        tree.insert(30);
+        tree.insert(20);
+        tree.insert(40);
+        tree.insert(70);
+        tree.insert(60);
+        tree.insert(80);
+
         tree.printTree();
     }
 
@@ -42,7 +45,6 @@ public class BinarySearchTree
 
     void insert(int data)
     {
-
         this.root = this.insertInTree(this.root, data);
     }
 
@@ -50,7 +52,7 @@ public class BinarySearchTree
     {
         if (root == null)
         {
-            this.root = new Node(data);
+            root = new Node(data);
             return root;
         }
 
